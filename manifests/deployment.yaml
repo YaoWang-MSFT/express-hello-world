@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-test
+  labels:
+    app: express-test
+  namespace: namespace-workflow-1679339679795
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-test
+  template:
+    metadata:
+      labels:
+        app: express-test
+    spec:
+      containers:
+        - name: express-test
+          image: acrworkflow1679339679795.azurecr.io/image-workflow-1679339679795:latest
+          ports:
+            - containerPort: 80
