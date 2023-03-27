@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: express-test-2
+  name: test0327-001
   labels:
-    app: express-test-2
-  namespace: namespace-workflow-1679345166421
+    app: test0327-001
+  namespace: namespace-workflow-1679951580246
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: express-test-2
+      app: test0327-001
   template:
     metadata:
       labels:
-        app: express-test-2
+        app: test0327-001
     spec:
       containers:
-        - name: express-test-2
-          image: acrworkflow1679345166421.azurecr.io/image-workflow-1679345166421:latest
+        - name: test0327-001
+          image: acrworkflow1679951580246.azurecr.io/image-workflow-1679951580246:latest
           ports:
             - containerPort: 80
